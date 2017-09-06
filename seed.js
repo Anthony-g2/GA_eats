@@ -116,4 +116,12 @@ restaurantList.push({
   ],
 });
 
-db.
+
+db.Restaurant.remove({}, function(err, restaurants){
+  db.Restaurant.create(restaurantList, function(err, restaurants){
+    if (err) { return console.log('ERROR', err); }
+    console.log("all resturants:", restaurants);
+    console.log( restaurants.length, "restaurants have been created.");
+    process.exit();
+  });
+});
