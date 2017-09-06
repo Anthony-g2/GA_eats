@@ -1,7 +1,6 @@
-var db = require('./models');
+var db = require("./models")
 
-var restaurantsList = [];
-
+var restaurantList = [];
 restaurantList.push({
   name: "Curry Up Now",
   adress: "255 Bush St San Francisco, CA 94104",
@@ -117,13 +116,12 @@ restaurantList.push({
   ],
 });
 
-db.Restaurant.remove({}, function(err, restaurants){
 
-  db.Restaurant.create(restaurantsList, function(err, restaurants){
+db.Restaurant.remove({}, function(err, restaurants){
+  db.Restaurant.create(restaurantList, function(err, restaurants){
     if (err) { return console.log('ERROR', err); }
-    console.log("all restaurants:", restaurants);
-    console.log("created", restaurants.length, "restaurants");
+    console.log("all resturants:", restaurants);
+    console.log( restaurants.length, "restaurants have been created.");
     process.exit();
   });
-
 });
