@@ -1,4 +1,8 @@
-{
+var db = require('./models');
+
+var restaurantsList = [];
+
+restaurantList.push({
   name: "Curry Up Now",
   adress: "255 Bush St San Francisco, CA 94104",
   typeOfFood: "Indian",
@@ -19,13 +23,13 @@
       date:"Oct. 18th 2016",
     },
   ],
-}
+});
 
-{
+restaurantList.push({
   name: "Sushirrito",
   adress: "226 Kearny St San Francisco, CA 94108",
   typeOfFood: "Japanese",
-  price:"$$",
+  price: "$$",
   parking: false,
   serevesAlcohol: true,
   lateNight: false,
@@ -42,9 +46,9 @@
       date:"Oct. 19th 2016",
     },
   ],
-}
+});
 
-{
+restaurantList.push({
   name: "Taqueria Estrella",
   adress: "380 Bush St Ste 5 International Food Ct San Francisco, CA 94104",
   typeOfFood: "Mexican",
@@ -65,9 +69,9 @@
       date:"Oct. 20th 2016",
     },
   ],
-}
+});
 
-{
+restaurantList.push({
   name: "Lite Bite",
   adress: "220 Bush St San Francisco, CA 94104",
   typeOfFood: "Healthy",
@@ -88,9 +92,9 @@
       date:"Oct. 21th 2016",
     },
   ],
-}
+});
 
-{
+restaurantList.push({
   name: "Pagan Idol",
   adress: "375 Bush St San Francisco, CA 94104",
   typeOfFood: "Tiki Bar",
@@ -106,9 +110,20 @@
       date:"Aug. 3rd, 2017 ",
     },
     {
-      text:"Coundn't get my afternoon burritto so I came here to drown my sorrows, drinks we good",
+      text:"Coundn't get my afternoon burritto so I came here to drown my sorrows, drinks were good!",
       name:"Bill",
       date:"Oct. 21th 2016",
     },
   ],
-}
+});
+
+db.Restaurant.remove({}, function(err, restaurants){
+
+  db.Restaurant.create(restaurantsList, function(err, restaurants){
+    if (err) { return console.log('ERROR', err); }
+    console.log("all restaurants:", restaurants);
+    console.log("created", restaurants.length, "restaurants");
+    process.exit();
+  });
+
+});
