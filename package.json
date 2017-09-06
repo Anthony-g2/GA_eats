@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "ga_eats_sf",
+  "version": "1.0.0",
+  "description": "Not Yelp",
+  "main": "seed.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthony-g2/JJA-GA_eats.git"
+  },
+  "author": "Jonathan M., Jimmy C., Anthony G.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthony-g2/JJA-GA_eats/issues"
+  },
+  "homepage": "https://github.com/Anthony-g2/JJA-GA_eats#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10"
+  }
+}
