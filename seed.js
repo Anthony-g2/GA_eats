@@ -3,7 +3,7 @@ var db = require("./models")
 var restaurantList = [];
 restaurantList.push({
   name: "Curry Up Now",
-  addressls: "255 Bush St San Francisco, CA 94104",
+  address: "255 Bush St San Francisco, CA 94104",
   typeOfFood: "Indian",
   price:"$",
   parking: false,
@@ -26,7 +26,7 @@ restaurantList.push({
 
 restaurantList.push({
   name: "Sushirrito",
-  addressls: "226 Kearny St San Francisco, CA 94108",
+  address: "226 Kearny St San Francisco, CA 94108",
   typeOfFood: "Japanese",
   price: "$$",
   parking: false,
@@ -49,7 +49,7 @@ restaurantList.push({
 
 restaurantList.push({
   name: "Taqueria Estrella",
-  addressls: "380 Bush St Ste 5 International Food Ct San Francisco, CA 94104",
+  address: "380 Bush St Ste 5 International Food Ct San Francisco, CA 94104",
   typeOfFood: "Mexican",
   price:"$",
   parking: false,
@@ -72,7 +72,7 @@ restaurantList.push({
 
 restaurantList.push({
   name: "Lite Bite",
-  addressls: "220 Bush St San Francisco, CA 94104",
+  address: "220 Bush St San Francisco, CA 94104",
   typeOfFood: "Healthy",
   price:"$",
   parking: false,
