@@ -5,7 +5,7 @@
   "name": "ga_eats_sf",
   "version": "1.0.0",
   "description": "Not Yelp",
-  "main": "seed.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anthony-g2/JJA-GA_eats.git"
