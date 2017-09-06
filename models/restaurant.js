@@ -5,11 +5,11 @@ var Tip = require('./tip')
 
 var RestaurantSchema = new Schema({
   name: String,
-  adress: String,
+  address: String,
   typeOfFood: String,
   price:String,
   parking: Boolean,
-  serevesAlcohol: Boolean,
+  servesAlcohol: Boolean,
   lateNight: Boolean,
   tags: [String],
   tip: [Tip.schema]
