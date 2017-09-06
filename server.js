@@ -10,15 +10,15 @@ var bodyParser = require('body-parser');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// var controllers = require('./controllers');
+var controllers = require('./controllers');
 
 /**********
  * ROUTES *
  **********/
 
-/*
- * HTML Endpoints
- */
+/******************
+ * HTML Endpoints *
+ ******************/
 
 app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
