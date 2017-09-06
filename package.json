@@ -8,14 +8,14 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anthony-g2/JJA-GA_eats.git"
+    "url": "git+https://github.com/Anthony-g2/GA_eats.git"
   },
   "author": "Jonathan M., Jimmy C., Anthony G.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Anthony-g2/JJA-GA_eats/issues"
+    "url": "https://github.com/Anthony-g2/GA_eats/issues"
   },
-  "homepage": "https://github.com/Anthony-g2/JJA-GA_eats#readme",
+  "homepage": "https://github.com/Anthony-g2/GA_eats#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
