@@ -28,7 +28,7 @@ restaurantList.push({
   name: "Sushirrito",
   adress: "226 Kearny St San Francisco, CA 94108",
   typeOfFood: "Japanese",
-  price:"$$",
+  price: "$$",
   parking: false,
   serevesAlcohol: true,
   lateNight: false,
@@ -109,7 +109,7 @@ restaurantList.push({
       date:"Aug. 3rd, 2017 ",
     },
     {
-      text:"Coundn't get my afternoon burritto so I came here to drown my sorrows, drinks we good",
+      text:"Coundn't get my afternoon burritto so I came here to drown my sorrows, drinks were good!",
       name:"Bill",
       date:"Oct. 21th 2016",
     },
