@@ -4,8 +4,13 @@ var db = require('../models');
 function index(req, res){
   // send back all tips for a restaurant selected by id as JSON
   db.Restaurant.findById(req.params.restaurantId, function(err, foundRestaurant) {
+<<<<<<< HEAD
     res.json(foundRestaurant.tips);
   });
+=======
+  res.json(foundRestaurant.tips);
+});
+>>>>>>> 1740ad60b3a62e3054231c46b7fee3ebbada678e
 }
 // POST '/api/restaurants/:restaurantId/tips'
 function create(req, res) {
@@ -28,7 +33,11 @@ function destroy(req, res){
   //delete a specific tip by id from a  specific restaurant by id
   db.Restaurant.findById(req.params.tipId, function(err, foundRestaurant) {
     console.log(foundRestaurant);
+<<<<<<< HEAD
     // we've got the tip, now find the tip within it
+=======
+    // we've got the tip, now find the song within it
+>>>>>>> 1740ad60b3a62e3054231c46b7fee3ebbada678e
     var correctTip = foundRestaurant.tips.id(req.params.tipId);
     if (correctTip) {
       correctTip.remove();
