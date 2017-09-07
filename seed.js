@@ -115,6 +115,50 @@ restaurantList.push({
     },
   ],
 });
+restaurantList.push({
+  name: "City Counter",
+  address: "115 Sansome St San Francisco, CA 94104",
+  typeOfFood: "Sandwiches",
+  price:"$$",
+  parking: false,
+  servesAlcohol: true,
+  lateNight: false,
+  tags: ["Chill", "Fresh"],
+  tips: [
+    {
+      text:"A modern spin on the best diner you've ever been to!",
+      name:"Amanda",
+      date:"Aug. 27th, 2017 ",
+    },
+    {
+      text:"so excited to try this.  staff seemed nice.  ended up getting the tri tip sandwhich, took the first bite and bit right into this one with the meat being super red and uncooked.",
+      name:"Bill",
+      date:"Oct. 21th 2016",
+    },
+  ],
+});
+restaurantList.push({
+  name: "Katsu House",
+  address: "112 Waverly Pl San Francisco, CA 94104",
+  typeOfFood: "Sushi Bars",
+  price:"$$",
+  parking: true,
+  servesAlcohol: false,
+  lateNight: false,
+  tags: ["Chill", "Fresh"],
+  tips: [
+    {
+      text:"Very well present spot. Love the decoration inside out! The food is very good and tasty. Perfect place to get a mid day snack too. Highly recommend!",
+      name:"Amanda",
+      date:"Aug. 30th, 2017 ",
+    },
+    {
+      text:"Super fresh food in a neighborhood that desperately needs nutritious, non-oily food. The humble exterior belies the efficient, clean service within.",
+      name:"Bill",
+      date:"Jul. 26th 2017",
+    },
+  ],
+});
 
 
 db.Restaurant.remove({}, function(err, restaurants){
