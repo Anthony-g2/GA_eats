@@ -116,6 +116,51 @@ restaurantList.push({
   ],
 });
 
+restaurantList.push({
+  name: "Bun Mee",
+  address: "650 Market St San Francisco, CA 94104",
+  typeOfFood: "Vietnamese",
+  price:"$",
+  parking: false,
+  servesAlcohol: true,
+  lateNight: false,
+  tags: ["Chill", "Fresh"],
+  tips: [
+    {
+      text:"That was a damn fine sandwich."
+      name:"Linda",
+      date:"Aug. 30th, 2016 ",
+    },
+    {
+      text:"I saw a cockroach, gross.",
+      name:"Tim",
+      date:"Oct. 31st 2016",
+    },
+  ],
+});
+
+restaurantList.push({
+  name: "Thainery",
+  address: "International Food Court 380 Bush St Ste 3 San Francisco, CA 94104",
+  typeOfFood: "Thai",
+  price:"$",
+  parking: false,
+  servesAlcohol: false,
+  lateNight: false,
+  tags: ["Friendly", "Fried"],
+  tips: [
+    {
+      text:"Servous was a little slow but worth the wait",
+      name:"Amanda",
+      date:"Apr. 3rd, 2017 ",
+    },
+    {
+      text:"There menu has lots of choices!",
+      name:"Eric",
+      date:"Dec. 9th 2016",
+    },
+  ],
+});
 
 db.Restaurant.remove({}, function(err, restaurants){
   db.Restaurant.create(restaurantList, function(err, restaurants){
