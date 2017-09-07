@@ -12,7 +12,7 @@ var RestaurantSchema = new Schema({
   servesAlcohol: Boolean,
   lateNight: Boolean,
   tags: [String],
-  tip: [Tip.schema]
+  tips: [Tip.schema]
 });
 
 var Restaurant = mongoose.model('Restaurant', RestaurantSchema);

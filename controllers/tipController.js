@@ -3,7 +3,7 @@ var db = require('../models');
 //GET /api/restaurants/:restaurantId/tips
 function index(req, res){
   // send back all tips for a restaurant selected by id as JSON
-  db.Restaurant.findById(req.params.restaurant_id, function(err, foundRestaurant) {
+  db.Restaurant.findById(req.params.restaurantId, function(err, foundRestaurant) {
   res.json(foundRestaurant.tips);
 });
 }
@@ -26,10 +26,10 @@ function create(req, res) {
 //DELETE '/api/restaurants/:restaurantId/tips/:tipId'
 function destroy(req, res){
   //delete a specific tip by id from a  specific restaurant by id
-  db.Restaurant.findById(req.params.tip_id, function(err, foundRestaurant) {
+  db.Restaurant.findById(req.params.tipId, function(err, foundRestaurant) {
     console.log(foundRestaurant);
     // we've got the tip, now find the song within it
-    var correctTip = foundRestaurant.tips.id(req.params.tip_id);
+    var correctTip = foundRestaurant.tips.id(req.params.tipId);
     if (correctTip) {
       correctTip.remove();
       // resave the tip now that the song is gone
