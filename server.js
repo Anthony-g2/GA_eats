@@ -20,6 +20,10 @@ var controllers = require('./controllers');
  * HTML Endpoints *
  ******************/
 
+ // Serve static files from the `/public` directory:
+// i.e. `/images`, `/scripts`, `/styles`
+app.use(express.static('public'));
+
 app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
@@ -27,7 +31,18 @@ app.get('/', function homepage (req, res) {
 /*
  * JSON API Endpoints
  */
+app.get('/api', controllers.api.index);
+app.get('/about', controllers.about.index);
 
+app.get('/api/restaurants', controllers.restaurant.index);
+app.post('/api/restaurants', controllers.restaurant.create);
+app.get('/api/restaurants/:restaurantId', controllers.restaurant.show);
+app.put('/api/restaurants/:restaurantId', controllers.restaurant.update);
+app.delete('/api/restaurants/:restaurantId', controllers.restaurant.destroy);
+
+app.get('/api/restaurants/:restaurantId/tips', controllers.tip.index);
+app.post('/api/restaurants/:restaurantId/tips', controllers.tip.create);
+app.delete('/api/restaurants/:restaurantId/tips/:tipId', controllers.tip.destroy);
 
 
 /**********
