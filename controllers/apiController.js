@@ -2,7 +2,6 @@ function index(req, res) {
   res.json({
     message: "Welcome to GA Eats Sf! Here's what you need to know!",
     documentationUrl: "https://github.com/Anthony-g2/GA_eats/blob/master/README.md",
-    baseUrl: "",
     endpoints: [
       {
         method: "GET",
