@@ -6,7 +6,7 @@ function index(req, res) {
   db.Restaurant.find({}, function(err, allRestaurants){
     console.log(allRestaurants)
     res.json(allRestaurants);
-  })
+  });
 }
 
 // POST /api/restaurants
@@ -31,7 +31,7 @@ function show(req, res) {
   db.Restaurant.findById(req.params.restaurantId, function( err, foundRestaurant){
     if(err){console.log("Something didn't work, error:", err);}
     res.json(foundRestaurant);
-  })
+  });
 }
 
 // DELETE /api/restaurants/:restaurantId
@@ -40,7 +40,7 @@ function destroy(req, res) {
   db.Restaurant.findByIdAndRemove(req.params.restaurantId, function(err, restaurant){
     if(err){console.log('There has been an error:', err)}
     console.log('Deleting:', restaurant)
-  })
+  });
 }
 
 // PUT or PATCH /api/restaurants/:restaurantId
@@ -56,7 +56,7 @@ function update(req, res) {
   foundRestaurant.parking = req.body.parking;
   foundRestaurant.servesAlcohol = req.body.servesAlcohol;
   foundRestaurant.lateNight = req.body.lateNight;
-  foundRestaurant.tags = req.body.tags;  
+  foundRestaurant.tags = req.body.tags;
 
   foundRestaurant.save(function(err, savedRestaurant) {
     if (err) { console.log('saving altered restaurant failed'); }
