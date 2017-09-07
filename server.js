@@ -38,11 +38,11 @@ app.get('/api/restaurants', controllers.restaurant.index);
 app.post('/api/restaurants', controllers.restaurant.create);
 app.get('/api/restaurants/:restaurantId', controllers.restaurant.show);
 app.put('/api/restaurants/:restaurantId', controllers.restaurant.update);
-app.delete('/api/restaurant/:restaurantId', controllers.resturant.destroy);
+app.delete('/api/restaurants/:restaurantId', controllers.restaurant.destroy);
 
-app.get('/api/restaurants/:restaurantId/tips', controllers.restaurant.index);
-app.post('/api/restaurants/:restaurantId/tips', controllers.restaurant.create);
-app.delete('/api/restaurants/:restaurantId/tips/:tipId', controllers.resturant.destroy);
+app.get('/api/restaurants/:restaurantId/tips', controllers.tip.index);
+app.post('/api/restaurants/:restaurantId/tips', controllers.tip.create);
+app.delete('/api/restaurants/:restaurantId/tips/:tipId', controllers.tip.destroy);
 
 /**********
  * SERVER *

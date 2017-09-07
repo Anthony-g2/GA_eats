@@ -127,7 +127,7 @@ restaurantList.push({
   tags: ["Chill", "Fresh"],
   tips: [
     {
-      text:"That was a damn fine sandwich."
+      text:"That was a damn fine sandwich.",
       name:"Linda",
       date:"Aug. 30th, 2016 ",
     },
