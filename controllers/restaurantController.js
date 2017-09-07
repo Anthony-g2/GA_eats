@@ -3,9 +3,10 @@ var db = require('../models')
 // GET /api/restaurants
 function index(req, res) {
   // send back all restaurants as JSON
-  db.Restaurant.find(), function(err, allRestaurants){
+  db.Restaurant.find({}, function(err, allRestaurants){
+    console.log(allRestaurants)
     res.json(allRestaurants);
-  }
+  })
 }
 
 // POST /api/restaurants
@@ -36,7 +37,7 @@ function show(req, res) {
 // DELETE /api/restaurants/:restaurantId
 function destroy(req, res) {
   // find one restaurant by id, delete it, and send it back as JSON
-  db.Director.findByIdAndRemove(req.params.restaurantId, function(err, restaurant){
+  db.Restaurant.findByIdAndRemove(req.params.restaurantId, function(err, restaurant){
     if(err){console.log('There has been an error:', err)}
     console.log('Deleting:', restaurant)
   })
