@@ -30,6 +30,7 @@ function loadRestaurants(restaurant) {
 };
 
 function renderRestaurant(restaurant) {
+  
   console.log("Rendering Restaurants", restaurant);
   var restaurantHtml = (`<div class="jumbotron resShow">
             <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
@@ -43,11 +44,11 @@ function renderRestaurant(restaurant) {
                     <li style="
                       margin-left: -10px;
                       margin-bottom: 10px;
-                    ">Pagan Idol</li>
+                    ">${restaurant.name}</li>
                   </span>
                   <span id="smaller">
-                    <li>375 Bush St, San Francisco</li>
-                    <li><em>Tiki Bar</em></li>
+                    <li>${restaurant.address}</li>
+                    <li><em>${restaurant.typeOfFood}</em></li>
                   </span>
                 </ul>
               </div>
@@ -57,16 +58,16 @@ function renderRestaurant(restaurant) {
               <div id="Boolean-data" class="col-sm-6">
                 <h4>Features</h4>
                 <span class='col-sm-6'>
-                  <p>$$ - Price Range</p>
+                  <p>${restaurant.price} - Price Range</p>
                 </span>
                 <span class='col-sm-6'>
-                  <p>* - Open Late</p>
+                  <p>${restaurant.lateNight} - Open Late</p>
                 </span>
                 <span class='col-sm-6'>
-                  <p>x - Parking</p>
+                  <p>${restaurant.parking} - Parking</p>
                 </span>
                 <span class='col-sm-6'>
-                  <p>* - Alcohol</p>
+                  <p>${restaurant.servesAlcohol} - Serves Alcohol</p>
                 </span>
               </div>
               <div id="tags" class="col-sm-6">
