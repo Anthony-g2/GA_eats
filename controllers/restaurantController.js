@@ -30,15 +30,15 @@ function index(req, res) {
 // POST /api/restaurants
 function create(req, res) {
   // create an restaurant based on request body and send it back as JSON
-  //console.log('body', req.body);
+
 
   //split at comma and remove and trailing space
-  //  var tags = req.body.tags.split(',').map(function(item) { return item.trim(); } );
-  //  req.body.tags = tags;
-  //console.log(req.body.address)
+
+  /*  var tags = req.body.tags.split(',').map(function(item) { return item.trim(); } );
+      req.body.tags = tags || req.body.tags;
+  console.log(req.body.address)*/
+
   geocoder.geocode(req.body.address, function(err, res) {
-     //console.log(res);
-     //console.log(res[0].longitude);
      req.body.longitude = res[0].longitude;
      req.body.latitude = res[0].latitude;
      console.log("req.body.longitude is:", req.body.longitude);
@@ -50,19 +50,7 @@ function create(req, res) {
        console.log(restaurant);
 
      });
-
-
-     
-
    });
-
-
-  // db.Restaurant.create(req.body, function(err, restaurant) {
-  //   console.log("whats getting posted:", req.body)
-  //   if (err) { console.log('error', err); }
-  //   console.log(restaurant);
-  //   res.json(restaurant);
-  // });
 }
 
 // GET /api/restaurants/:restaurantId
