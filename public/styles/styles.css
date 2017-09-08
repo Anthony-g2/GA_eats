@@ -13,7 +13,10 @@
   margin: 0 10px;
 }
 #header{
-  margin: 30px auto;
+  width: 100%;
+  padding-bottom: 30px;
+  margin: 10px auto 50px auto;
+  background-color: rgb(234,234,236);
 }
 #footer{
   height: 60px;
@@ -21,9 +24,13 @@
 }
 .imgRest {
   width: 275px;
-  height: 183px;
+  height: 200px;
   margin: -10px 2px -10px -30px;
   border-radius: 6px;
+}
+#Boolean-data p {
+  font-size: 15px;
+  padding-left: 25px;
 }
 .resShow {
   text-align: justify;
@@ -35,10 +42,18 @@
   margin-right: -30px;
   display: flex;
 }
-.String-Data ul {
+#larger {
   text-transform: capitalize;
   list-style: none;
   margin-top: -10px;
+  text-decoration: underline;
+
+}
+#smaller li{
+  list-style: none;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 500;
 }
 body {
   background-color: rgb(245,245,255);
@@ -58,4 +73,52 @@ span{
 #map {
  height: 400px;
  width: 100%;
+}
+.creMod{
+  display:flex;
+  width: 625px;
+  margin:auto;
+  overflow: 100%;
+}
+.body{
+  margin: 20px;
+}
+.body h3{
+  width: inherit;
+  text-align: center;
+  text-transform: capitalize;
+}
+.body p{
+  font-weight: 500;
+  width: inherit;
+  text-align: center;
+  text-transform: capitalize;
+}
+form.create{
+  border-radius: 5px;
+  width: 625px;
+  margin: auto;
+  background-color: #eaeaec;
+}
+.features{
+  width: inherit;
+  text-align: center;
+}
+.descripts{
+  position: relative;
+}
+.topBar{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: auto;
+	width: 100%;
+  background-color: #a9a9ab;
+}
+.modButt1{
+  float: left;
+  margin: 5px;
+}
+.modButt2{
+  float: right;
+  margin: 5px;
 }
