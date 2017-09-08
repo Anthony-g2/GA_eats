@@ -13,7 +13,7 @@ var RestaurantSchema = new Schema({
   parking: Boolean,
   servesAlcohol: Boolean,
   lateNight: Boolean,
-  //tags: [String],
+  tags: [String],
   tips: [Tip.schema]
 });
 
