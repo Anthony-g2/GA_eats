@@ -59,16 +59,16 @@ function create(req, res) {
               address: response[0].formattedAddress,
               price: req.body.price,
               typeOfFood: req.body.typeOfFood,
-              parking: req.body.parking || false,
-              servesAlcohol: req.body.servesAlcohol,
-              lateNight: req.body.lateNight || false,
+              parking: req.body.parking || "No",
+              servesAlcohol: req.body.servesAlcohol || "No",
+              lateNight: req.body.lateNight || "No",
               tags: req.body.tags
 
           }, function(err, createdRestaurant) {
               res.send(createdRestaurant);
               // renderRestaurant(restaurant);
           });
-  
+
       })
 }
 

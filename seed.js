@@ -7,9 +7,9 @@ restaurantList.push({
   address: "255 Bush St San Francisco, CA 94104",
   typeOfFood: "Indian",
   price:"$",
-  parking: false,
-  servesAlcohol: false,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "No",
+  lateNight: "No",
   tags: ["Busy", "Fresh"],
   tips: [
     {
@@ -30,9 +30,9 @@ restaurantList.push({
   address: "226 Kearny St San Francisco, CA 94108",
   typeOfFood: "Japanese",
   price: "$$",
-  parking: false,
-  servesAlcohol: true,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "Yes",
+  lateNight: "No",
   tags: ["Busy", "Fresh"],
   tips: [
     {
@@ -53,9 +53,9 @@ restaurantList.push({
   address: "380 Bush St Ste 5 International Food Ct San Francisco, CA 94104",
   typeOfFood: "Mexican",
   price:"$",
-  parking: false,
-  servesAlcohol: false,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "No",
+  lateNight: "No",
   tags: ["Friendly", "Fresh"],
   tips: [
     {
@@ -76,9 +76,9 @@ restaurantList.push({
   address: "220 Bush St San Francisco, CA 94104",
   typeOfFood: "Healthy",
   price:"$",
-  parking: false,
-  servesAlcohol: false,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "No",
+  lateNight: "No",
   tags: ["Friendly", "Fresh"],
   tips: [
     {
@@ -99,9 +99,9 @@ restaurantList.push({
   address: "375 Bush St San Francisco, CA 94104",
   typeOfFood: "Tiki Bar",
   price:"$$",
-  parking: false,
-  servesAlcohol: true,
-  lateNight: true,
+  parking: "No",
+  servesAlcohol: "Yes",
+  lateNight: "Yes",
   tags: ["Chill", "Fresh"],
   tips: [
     {
@@ -121,9 +121,9 @@ restaurantList.push({
   address: "115 Sansome St San Francisco, CA 94104",
   typeOfFood: "Sandwiches",
   price:"$$",
-  parking: false,
-  servesAlcohol: true,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "Yes",
+  lateNight: "No",
   tags: ["Chill", "Fresh"],
   tips: [
     {
@@ -143,9 +143,9 @@ restaurantList.push({
   address: "112 Waverly Pl San Francisco, CA 94104",
   typeOfFood: "Sushi Bars",
   price:"$$",
-  parking: true,
-  servesAlcohol: false,
-  lateNight: false,
+  parking: "Yes",
+  servesAlcohol: "No",
+  lateNight: "No",
   tags: ["Chill", "Fresh"],
   tips: [
     {
@@ -166,9 +166,9 @@ restaurantList.push({
   address: "650 Market St San Francisco, CA 94104",
   typeOfFood: "Vietnamese",
   price:"$",
-  parking: false,
-  servesAlcohol: true,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "Yes",
+  lateNight: "No",
   tags: ["Chill", "Fresh"],
   tips: [
     {
@@ -189,9 +189,9 @@ restaurantList.push({
   address: "International Food Court 380 Bush St Ste 3 San Francisco, CA 94104",
   typeOfFood: "Thai",
   price:"$",
-  parking: false,
-  servesAlcohol: false,
-  lateNight: false,
+  parking: "No",
+  servesAlcohol: "No",
+  lateNight: "No",
   tags: ["Friendly", "Fried"],
   tips: [
     {
