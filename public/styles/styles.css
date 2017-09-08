@@ -1,8 +1,6 @@
 #map {
-  width: 500px;
+  width: 100%;
   height: 400px;
-  padding:0;
-
 }
 #options {
   margin-top: 30px;
@@ -70,6 +68,10 @@ body {
 span{
   width: 200px;
 }
+#map {
+ height: 400px;
+ width: 100%;
+}
 .creMod{
   display:flex;
   width: 625px;
@@ -80,9 +82,13 @@ span{
   margin: 20px;
 }
 .body h3{
-  width: inherit;
+  width: 150px;
   text-align: center;
   text-transform: capitalize;
+  margin: 20px auto;
+  height: 30px;
+  background-color: rgb(245,245,255);
+  border-radius: 5px;
 }
 .body p{
   font-weight: 500;
