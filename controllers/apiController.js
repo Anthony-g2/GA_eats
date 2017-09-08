@@ -2,6 +2,7 @@ function index(req, res) {
   res.json({
     message: "Welcome to GA Eats Sf! Here's what you need to know!",
     documentationUrl: "https://github.com/Anthony-g2/GA_eats/blob/master/README.md",
+    baseUrl: "https://tranquil-woodland-73750.herokuapp.com/",
     endpoints: [
       {
         method: "GET",
