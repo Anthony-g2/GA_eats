@@ -21,7 +21,7 @@ function index(req, res) {
       {
         method: "POST",
         path: "/api/restaurants",
-        description: "add a restaurant to our database",
+        description: "add a restaurant to our database will not return a json object to screen",
       },
       {
         method: "GET",

@@ -70,6 +70,10 @@ body {
 span{
   width: 200px;
 }
+#map {
+ height: 400px;
+ width: 100%;
+}
 .creMod{
   display:flex;
   width: 625px;
