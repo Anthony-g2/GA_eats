@@ -1,70 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8">
-    <title>Not Yelp</title>
-
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/styles.css">
-
-    <!-- VENDOR SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-
-    <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
-
-
-    <!-- FAV icon  -->
-    <link rel="icon" type="image/png" href="/images/logo.png">
-
-
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div>
-          <div id="header" class="container jumbotron text-center">
-            <h1>GA Eats SF</h1>
-            <h3>(NOT Yelp...)</h3>
-          </div>
-          <div id="map"></div>
-          <script>
-            function initMap() {
-              var ga = {lat: 37.791, lng: -122.401};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 16,
-                center: ga
-              });
-              var marker = new google.maps.Marker({
-                position: ga,
-                map: map
-              });
-            }
-          </script>
-          <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVMk-QXI6cqgt6DLMG0NNW-1uF_X78sjY&callback=initMap">
-          </script>
-          <div id="options" class="container text-center">
-            <button type="button" name="Search" class="btn-sm btn-group-lg btn-info optButt">Search</button>
-            <button type="button" name="Create" class="btn-sm btn-group-lg btn-success optButt">Create</button>
-          </div>
-          <hr>
-          <div id="results" class="container text-justify">
-
-            <!-- <div class="jumbotron resShow">
-              <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
-
-              <div class='String Data'>
-                <ul>
-                  <li>name</li>
-                  <li>address</li>
-                  <li>typeOfFood</li>
-                </ul>
-              </div>
-
 <head>
   <meta charset="utf-8">
   <title>Not Yelp</title>
@@ -96,21 +30,21 @@
         </div>
         <div id="map"></div>
         <script>
-           function initMap() {
-             var ga = {lat: 37.791, lng: -122.401};
-             var map = new google.maps.Map(document.getElementById('map'), {
-               zoom: 16,
-               center: ga
-             });
-             var marker = new google.maps.Marker({
-               position: ga,
-               map: map
-             });
-           }
-         </script>
-         <script async defer
-         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVMk-QXI6cqgt6DLMG0NNW-1uF_X78sjY&callback=initMap">
-         </script>
+        function initMap() {
+          var ga = {lat: 37.791, lng: -122.401};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: ga
+          });
+          var marker = new google.maps.Marker({
+            position: ga,
+            map: map
+          });
+        }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVMk-QXI6cqgt6DLMG0NNW-1uF_X78sjY&callback=initMap">
+        </script>
         <div id="options" class="container text-center">
           <button type="button" name="Create" class="btn-sm btn-group-lg btn-success optButt">Create</button>
         </div>
@@ -133,6 +67,14 @@
                   <input type="text" name="restaurantName" value="" id="restaurantName" class="form-control form-control-sm">
                 </div>
               </div>
+
+              <div class="form-group row descripts">
+                <label for="restaurantAddress" class="col-sm-2 col-form-label">Restaurant Adress</label>
+                <div class="col-sm-10">
+                  <input type="text" name="restaurantAddress" value="" id="restaurantAddress" class="form-control form-control-sm">
+                </div>
+              </div>
+
 
               <div class="form-group row descripts">
                 <label for="typeOfFood" class="col-sm-2 col-form-label">Food Type</label>
@@ -183,82 +125,68 @@
         <hr>
         <div id="results" class="container text-justify">
 
-          <!-- <div class="jumbotron resShow">
-          <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
-
-          <div class='String Data'>
-          <ul>
-          <li>name</li>
-          <li>address</li>
-          <li>typeOfFood</li>
-        </ul>
+          <div class="jumbotron resShow">
+            <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
+            <div style="
+              width: auto;
+              height: max-content;
+            ">
+              <div id='String-Data'>
+                <ul>
+                  <span id="larger">
+                    <li style="
+                      margin-left: -10px;
+                      margin-bottom: 10px;
+                    ">Pagan Idol</li>
+                  </span>
+                  <span id="smaller">
+                    <li>375 Bush St, San Francisco</li>
+                    <li><em>Tiki Bar</em></li>
+                  </span>
+                </ul>
+              </div>
+              <div class='container' style="
+                width: auto;
+              ">
+              <div id="Boolean-data" class="col-sm-6">
+                <h4>Features</h4>
+                <span class='col-sm-6'>
+                  <p>$$ - Price Range</p>
+                </span>
+                <span class='col-sm-6'>
+                  <p>* - Open Late</p>
+                </span>
+                <span class='col-sm-6'>
+                  <p>x - Parking</p>
+                </span>
+                <span class='col-sm-6'>
+                  <p>* - Alcohol</p>
+                </span>
+              </div>
+              <div id="tags" class="col-sm-6">
+                <h4>Tags</h4>
+                <ul class="inline-list">
+                  <span class='col-sm-3'><li>Fun</li></span>
+                  <span class='col-sm-3'><li>Crazy</li></span>
+                  <span class='col-sm-3'><li>Lotta love</li></span>
+                    <span class='col-sm-3'><li>Fun</li></span>
+                    <span class='col-sm-3'><li>Crazy</li></span>
+                    <span class='col-sm-3'><li>Lotta love</li></span>
+              </div>
+            </div>
+            <div id="tips">
+              <h4>Tips</h4>
+              <p>"dont go dey suck"</p>
+              <p>Anthony Greenwell. December 4th, 2016</p>
+            </div>
+            </div>
+            <button type="button" name="close" class="resButt1 col-sm-2 btn-sm btn-group-sm btn-danger">Delete</button>
+          </div>
+        </div>
       </div>
-
-    </div>
-
-    <div class="jumbotron resShow">
-    <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
-
-    <div class='String Data'>
-    <ul>
-    <li>name</li>
-    <li>address</li>
-    <li>typeOfFood</li>
-  </ul>
-</div>
-
-</div>
-
-<div class="jumbotron resShow">
-<img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
-
-<div class='String Data'>
-<ul>
-<li>name</li>
-<li>address</li>
-<li>typeOfFood</li>
-</ul>
-</div>
-</div>
--->
-<div class="jumbotron resShow">
-  <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
-  <div>
-    <button type="button" name="close" class="resButt1 col-sm-2 btn-sm btn-group-sm btn-danger">Delete</button>
-    <div id='String-Data'>
-      <ul>
-        <span id="larger">
-          <li>Pagan Idol</li>
-        </span>
-        <span id="smaller">
-          <li>375 Bush St, San Francisco</li>
-          <li><em>Tiki Bar</em></li>
-        </span>
-      </ul>
-    </div>
-    <br>
-    <div id="Boolean-data">
-      <span class='col-sm-6'>
-        <p>$$ - Price Range</p>
-      </span>
-      <span class='col-sm-6'>
-        <p>* - Open Late</p>
-      </span>
-      <span class='col-sm-6'>
-        <p>x - Parking</p>
-      </span>
-      <span class='col-sm-6'>
-        <p>* - Alcohol</p>
-      </span>
     </div>
   </div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<div id="footer" class="text-center">
-</div>
+  <div id="footer" class="text-center">
+  </div>
 </body>
 </html>

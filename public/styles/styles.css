@@ -29,6 +29,7 @@
 #Boolean-data p {
   font-size: 15px;
   padding-left: 25px;
+  font-weight: 500;
 }
 .resShow {
   text-align: justify;
@@ -55,15 +56,6 @@
 }
 body {
   background-color: rgb(245,245,255);
-}
-#map img {
-  width:auto;
-  position: relative;
-}
-.Boolean-data{
-  padding-left: 25px;
-  font-size: 10px;
-  width: 450px;
 }
 span{
   width: 200px;
@@ -123,4 +115,48 @@ form.create{
 .modButt2{
   float: right;
   margin: 5px;
+}
+.resButt1{
+  float: right;
+  height: 32px;
+  width: 60px;
+}
+#tags{
+  height: auto;
+  width: auto;
+}
+.inline-list{
+  list-style: none;
+}
+#tags h4{
+  height: 32px;
+  text-align: justify;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  padding-top: 15px;
+  padding-left: 25px;
+}
+#Boolean-data h4{
+  height: 32px;
+  text-align: justify;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  padding-top: 15px;
+  padding-left: 25px;
+}
+span.col-sm-3{
+  margin-top: 0;
+  padding-left: 0px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: justify;
+}
+#String-Data ul{
+  margin-bottom: 0;
+}
+#Boolean-data {
+  border-right: 1px solid black;
+  height: auto;
+  width: auto;
 }
