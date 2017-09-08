@@ -57,4 +57,25 @@ span{
 }
 .creMod{
   border: 1px solid black;
+  display:flex;
+}
+.createMod{
+  width:600px;
+}
+.body{
+}
+.body h3{
+  width: inherit;
+  text-align: center;
+  text-transform: capitalize;
+}
+form.create{
+  width: 585px;
+}
+.features{
+  width: inherit;
+  text-align: center;
+}
+.descripts{
+  position: relative;
 }
