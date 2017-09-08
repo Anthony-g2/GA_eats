@@ -6,12 +6,14 @@ var Tip = require('./tip')
 var RestaurantSchema = new Schema({
   name: String,
   address: String,
+  latitude: Number,
+  longitude: Number,
   typeOfFood: String,
   price:String,
   parking: Boolean,
   servesAlcohol: Boolean,
   lateNight: Boolean,
-  tags: [String],
+  //tags: [String],
   tips: [Tip.schema]
 });
 
