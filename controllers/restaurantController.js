@@ -66,7 +66,9 @@ function create(req, res) {
 
           }, function(err, createdRestaurant) {
               res.send(createdRestaurant);
+              // renderRestaurant(restaurant);
           });
+  
       })
 }
 
