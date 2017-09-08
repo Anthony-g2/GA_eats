@@ -24,7 +24,7 @@ function index(req, res) {
   db.Restaurant.find({}, function(err, allRestaurants){
     console.log(allRestaurants)
     res.json(allRestaurants);
-  })
+  });
 }
 
 // POST /api/restaurants
@@ -34,23 +34,40 @@ function create(req, res) {
 
   //split at comma and remove and trailing space
 
-  /*  var tags = req.body.tags.split(',').map(function(item) { return item.trim(); } );
-      req.body.tags = tags || req.body.tags;
-  console.log(req.body.address)*/
+  //  var tags = req.body.tags.split(',').map(function(item) { return item.trim(); } );
+      // req.body.tags = tags || req.body.tags;
+      // req.body.parking = req.body.parking || false;
+      // req.body.servesAlcohol = req.body.servesAlcohol || false;
+      // req.body.lateNight = req.body.lateNight || false;
 
-  geocoder.geocode(req.body.address, function(err, res) {
-     req.body.longitude = res[0].longitude;
-     req.body.latitude = res[0].latitude;
-     console.log("req.body.longitude is:", req.body.longitude);
-     console.log("what i want posted:", req.body);
+  //     db.Restaurant.create(req.body, function(err, restaurant) {
+  //       console.log("whats getting posted:", req.body)
+  //       if (err) { console.log('error', err); }
+  //       console.log(restaurant);
+  //
+  //     });
+  // console.log(req.body.address)
+  var tagsFormatted = req.body.tags.split(',').map(function(item) { return item.trim(); } );
+  req.body.tags = tagsFormatted || req.body.tags;
+  geocoder.geocode(req.body.address, function(err, response) {
 
-     db.Restaurant.create(req.body, function(err, restaurant) {
-       console.log("whats getting posted:", req.body)
-       if (err) { console.log('error', err); }
-       console.log(restaurant);
+    // var tagsFormatted = req.body.tags.split(',').map(function(item) { return item.trim(); } );
+          db.Restaurant.create({
+              name: req.body.name,
+              latitude: response[0].latitude,
+              longitude: response[0].longitude,
+              address: response[0].formattedAddress,
+              price: req.body.price,
+              typeOfFood: req.body.typeOfFood,
+              parking: req.body.parking || false,
+              servesAlcohol: req.body.servesAlcohol,
+              lateNight: req.body.lateNight || false,
+              tags: req.body.tags
 
-     });
-   });
+          }, function(err, createdRestaurant) {
+              res.send(createdRestaurant);
+          });
+      })
 }
 
 // GET /api/restaurants/:restaurantId
@@ -59,7 +76,7 @@ function show(req, res) {
   db.Restaurant.findById(req.params.restaurantId, function( err, foundRestaurant){
     if(err){console.log("Something didn't work, error:", err);}
     res.json(foundRestaurant);
-  })
+  });
 }
 
 // DELETE /api/restaurants/:restaurantId
@@ -68,7 +85,7 @@ function destroy(req, res) {
   db.Restaurant.findByIdAndRemove(req.params.restaurantId, function(err, restaurant){
     if(err){console.log('There has been an error:', err)}
     console.log('Deleting:', restaurant)
-  })
+  });
 }
 
 // PUT or PATCH /api/restaurants/:restaurantId
