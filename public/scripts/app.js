@@ -7,32 +7,6 @@ $(document).ready(function() {
     url: "/api/restaurants",
     success: loadRestaurants
   })
-
-//   $.ajax({
-//     method: 'GET',
-//     url: '/api/restaurants',
-//     json: true
-//   });
-//   .then(function(restaurants){
-//     for(let i=0;i<restaurants.length;i++){
-//       $('#restaurants').append(renderRestaurant(restaurants[i]));
-//     }
-//     $('#').submit(function(event){
-//       event.preventDefault();
-//       var cereal = $(this).serialize();
-//       console.log(cereal);
-//       $.ajax({
-//         method: 'POST',
-//         url:'#',
-//         data: cereal,
-//       })
-//       .then(function(data){
-//         $('#results').append(renderRestaurant(data));
-//       })
-//     })
-//   })
-// })
-
 //Functionality of the domain
 
 $('.create').on('submit', function(e) {
@@ -41,6 +15,8 @@ $('.create').on('submit', function(e) {
   console.log('formData', formData);
     $.post('/api/restaurants',formData, function(restaurant) {
       console.log('restaurant after POST', restaurant);
+      $('.create')[0].reset();
+
     });
 
 })
@@ -51,7 +27,7 @@ function loadRestaurants(restaurant) {
   restaurant.forEach(function(restaurant){
     renderRestaurant(restaurant);
   });
-}
+};
 
 function renderRestaurant(restaurant) {
   console.log("Rendering Restaurants", restaurant);
