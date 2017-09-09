@@ -41,9 +41,11 @@ $('.create').on('submit', function(e) {
   console.log('formData', formData);
     $.post('/api/restaurants',formData, function(restaurant) {
       console.log('restaurant after POST', restaurant);
+      renderRestaurant(restaurant)
     });
 
-})
+});
+$('#results').on('click', '.resButt1', handleDeleteResturantClick)
 
 });
 
@@ -53,10 +55,29 @@ function loadRestaurants(restaurant) {
   });
 }
 
+function handleDeleteResturantClick(e) {
+  var restaurantId = $(this).parents('.resShow').data('restaurant-id');
+  console.log('someone wants to delete restaurant id=' + restaurantId );
+  $.ajax({
+    url: '/api/restaurants/' + restaurantId,
+    method: 'DELETE',
+    //the commented out part of line below is how tunely does this but I can get it to work.
+    success: /*handleDeleteRestaurantSuccess()*/ window.location.reload(),
+  });
+}
+
+function handleDeleteRestaurantSuccess(data) {
+  console.log(data)
+  console.log("delete success function started")
+  var deletedRestaurantId = data._id;
+  console.log('removing the following restaurant from the page:', deletedRestaurantId);
+  $('div[data-restaurant-id=' + deletedRestaurantId + ']').remove();
+}
+
 function renderRestaurant(restaurant) {
-  
-  console.log("Rendering Restaurants", restaurant);
-  var restaurantHtml = (`<div class="jumbotron resShow">
+
+  console.log("Rendering Restaurants", restaurant.name);
+  var restaurantHtml = (`<div class="jumbotron resShow" data-restaurant-id="${restaurant._id}">
             <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
             <div style="
               width: auto;
@@ -100,9 +121,6 @@ function renderRestaurant(restaurant) {
                   <span class='col-sm-3'><li>Fun</li></span>
                   <span class='col-sm-3'><li>Crazy</li></span>
                   <span class='col-sm-3'><li>Lotta love</li></span>
-                    <span class='col-sm-3'><li>Fun</li></span>
-                    <span class='col-sm-3'><li>Crazy</li></span>
-                    <span class='col-sm-3'><li>Lotta love</li></span>
               </div>
             </div>
             <div id="tips">
