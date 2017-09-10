@@ -14,7 +14,7 @@ var RestaurantSchema = new Schema({
   servesAlcohol: String,
   lateNight: String,
   tags: [String],
-  tips: [Tip.schema]
+  tips: [Tip.schema],
 });
 
 var Restaurant = mongoose.model('Restaurant', RestaurantSchema);
