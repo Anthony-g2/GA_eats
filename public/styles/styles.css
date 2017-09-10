@@ -72,6 +72,7 @@ span{
 }
 .body{
   margin: 20px;
+  height: 600px;
 }
 .body h3{
   width: 150px;
@@ -164,4 +165,7 @@ span.col-sm-3{
   height: 2700px;
   overflow: scroll;
   width: 1210px;
+}
+.hideMod{
+  display: none;
 }

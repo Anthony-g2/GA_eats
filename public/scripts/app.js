@@ -16,23 +16,37 @@ $('.create').on('submit', function(e) {
     $.post('/api/restaurants',formData, function(restaurant) {
       console.log('restaurant after POST', restaurant);
       $('.create')[0].reset();
-
+      renderRestaurant(restaurant);
     });
-
-})
-
+    $('.creMod').fadeOut(500);
+    loadRestaurants(restaurant);
 });
 
-function loadRestaurants(restaurant) {
-  restaurant.forEach(function(restaurant){
-    renderRestaurant(restaurant);
-  });
-};
+$('#results').on('click', '.resButt1', function(e) {
+   var id = $(this).closest('.restaurant').data('restaurant-id');
+   console.log('id', id);
+   console.log('someone wants to delete restaurant id= ', id );
+   $(this).closest('.restaurant').fadeOut(500);
+   $.ajax({
+     url: '/api/restaurants/' + id,
+     method: 'DELETE',
+     //the commented out part of line below is how tunely does this but I can get it to work.
+     success: function(result){
+       $('[data-restaurant-id=' + restaurantId +']')
+     },
+   });
+ });
 
+$('.optButt').on('click', function(){
+  $('.creMod').fadeIn(500);
+});
+
+
+});
 function renderRestaurant(restaurant) {
-  
+
   console.log("Rendering Restaurants", restaurant);
-  var restaurantHtml = (`<div class="jumbotron resShow">
+  var restaurantHtml = (`<div class="jumbotron resShow restaurant" data-restaurant-id=${ restaurant._id}>
             <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
             <div style="
               width: auto;
@@ -72,22 +86,25 @@ function renderRestaurant(restaurant) {
               </div>
               <div id="tags" class="col-sm-6">
                 <h4>Tags</h4>
-                <ul class="inline-list">
-                  <span class='col-sm-3'><li>Fun</li></span>
-                  <span class='col-sm-3'><li>Crazy</li></span>
-                  <span class='col-sm-3'><li>Lotta love</li></span>
-                    <span class='col-sm-3'><li>Fun</li></span>
-                    <span class='col-sm-3'><li>Crazy</li></span>
-                    <span class='col-sm-3'><li>Lotta love</li></span>
+                <ul class="inline-list"><span class='col-sm-3'><li> ${restaurant.tags}</li></span></ul>
               </div>
-            </div>
-            <div id="tips">
-              <h4>Tips</h4>
-              <p>"dont go dey suck"</p>
-              <p>Anthony Greenwell. December 4th, 2016</p>
             </div>
             </div>
             <button type="button" name="close" class="resButt1 col-sm-2 btn-sm btn-group-sm btn-danger">Delete</button>
           </div>`)
-          $('#results').append(restaurantHtml);
-}
+          $('#results').append(restaurantHtml).fadeIn(1000);
+};
+
+function loadRestaurants(restaurant) {
+  restaurant.forEach(function(restaurant){
+    renderRestaurant(restaurant);
+  });
+};
+
+// tips
+
+// <div id="tips">
+//   <h4>Tips</h4>
+//   <p>"${restaurant.tips[x].text}"</p>
+//   <p>${restaurant.tips[x].name}. ${restaurant.tips[x].date}</p>
+// </div>
