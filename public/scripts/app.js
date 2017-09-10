@@ -41,9 +41,11 @@ $('.create').on('submit', function(e) {
   console.log('formData', formData);
     $.post('/api/restaurants',formData, function(restaurant) {
       console.log('restaurant after POST', restaurant);
+      renderRestaurant(restaurant)
     });
 
-})
+});
+$('#results').on('click', '.resButt1', handleDeleteResturantClick)
 
 });
 
@@ -51,6 +53,25 @@ function loadRestaurants(restaurant) {
   restaurant.forEach(function(restaurant){
     renderRestaurant(restaurant);
   });
+}
+
+function handleDeleteResturantClick(e) {
+  var restaurantId = $(this).parents('.resShow').data('restaurant-id');
+  console.log('someone wants to delete restaurant id=' + restaurantId );
+  $.ajax({
+    url: '/api/restaurants/' + restaurantId,
+    method: 'DELETE',
+    //the commented out part of line below is how tunely does this but I can get it to work.
+    success: /*handleDeleteRestaurantSuccess()*/ window.location.reload(),
+  });
+}
+
+function handleDeleteRestaurantSuccess(data) {
+  console.log(data)
+  console.log("delete success function started")
+  var deletedRestaurantId = data._id;
+  console.log('removing the following restaurant from the page:', deletedRestaurantId);
+  $('div[data-restaurant-id=' + deletedRestaurantId + ']').remove();
 }
 
 function renderRestaurant(restaurant) {
@@ -80,7 +101,7 @@ function renderRestaurant(restaurant) {
                 </ul>
               </div>
               <div class='container col-sm-12' style="
-                width: auto;
+                  width: auto;
               ">
               <div id="Boolean-data" class="col-sm-6">
                 <h4>Features</h4>
@@ -99,7 +120,14 @@ function renderRestaurant(restaurant) {
               </div>
               <div id="tags" class="col-sm-6">
                 <h4>Tags</h4>
+
                 <ul class="inline-list">${restaurant.tags}</ul>
+
+                <ul class="inline-list">
+                  <span class='col-sm-3'><li>Fun</li></span>
+                  <span class='col-sm-3'><li>Crazy</li></span>
+                  <span class='col-sm-3'><li>Lotta love</li></span>
+
               </div>
             </div>
             <div id="tips">
