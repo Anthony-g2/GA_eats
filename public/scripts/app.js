@@ -2,13 +2,14 @@
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-//on load get restaurants
   $.ajax ({
     method: "GET",
     url: "/api/restaurants",
     success: loadRestaurants
   })
-//create a new restuarnt
+
+  //Functionality of the domain
+
   $('.create').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
@@ -20,14 +21,9 @@ $(document).ready(function() {
       renderRestaurant(restaurant);
     });
     $('.creMod').fadeOut(500);
+    loadRestaurants(restaurant);
   });
 
-  //close button closes create form
-  $('#closeCreateForm').on('click', function(e) {
-    $('.creMod').fadeOut(500);
-  });
-
-  // delete a resturant from the list
   $('#results').on('click', '.resButt1', function(e) {
     var id = $(this).closest('.restaurant').data('restaurant-id');
     console.log('id', id);
@@ -36,6 +32,7 @@ $(document).ready(function() {
     $.ajax({
       url: '/api/restaurants/' + id,
       method: 'DELETE',
+      //the commented out part of line below is how tunely does this but I can get it to work.
       success: function(result){
         $('[data-restaurant-id=' + restaurantId +']')
       },
@@ -45,11 +42,35 @@ $(document).ready(function() {
   $('.optButt').on('click', function(){
     $('.creMod').fadeIn(500);
   });
+
+
+
+function loadRestaurants(restaurant) {
+  restaurant.forEach(function(restaurant){
+    renderRestaurant(restaurant);
+  });
+};
+
 });
-// formating for a restaurant on the page
+var map;
+function initMap() {
+  //console.log("map initted")
+  var ga = {lat: 37.791, lng: -122.401};
+   map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 16,
+    center: {lat: 37.791, lng: -122.401}
+  });
+}
 function renderRestaurant(restaurant) {
 
   console.log("Rendering Restaurants", restaurant);
+  var marker = new google.maps.Marker({
+    position: {
+      lat:  restaurant.latitude,
+      lng: restaurant.longitude,
+    },
+    map: map
+  });
 
 
   var restaurantHtml = (`<div class="jumbotron resShow restaurant" data-restaurant-id=${ restaurant._id}>
@@ -101,17 +122,7 @@ function renderRestaurant(restaurant) {
   $('#results').append(restaurantHtml).fadeIn(600);
 };
 
-
-//load restaurant when page is loaded
-function loadRestaurants(restaurant) {
-  restaurant.forEach(function(restaurant){
-    renderRestaurant(restaurant);
-  });
-};
-
-
-
-// tips feature still being built
+// tips
 // return `<div id="tips">
 //   <h4>Tips</h4>
 //   <p>"${restaurant.tips[x].text}"</p>
