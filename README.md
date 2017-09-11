@@ -4,15 +4,16 @@ This is a application made to show all the local restaurants around General Asse
 
 The main functionality of this application is to help users create a foodie database that'll help users find recommended food spots along with inputting their personal experience.
 
-## Technologies Used: *Javascript*
-                      *HTML*
-                      *CSS*
-                      *Bootstrap*
-                      *Express*
-                      *Body-parser*
-                      *Mongoose*
-                      *Node-geocoder*
-                      *Jquery*
+## Technologies Used:
+*Javascript*
+*HTML*
+*CSS*
+*Bootstrap*
+*Express*
+*Body-parser*
+*Mongoose*
+*Node-geocoder*
+*Jquery*
 
 ## Existing Features:
 *Create/Delete Restaurants(bullet points)*
