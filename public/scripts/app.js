@@ -2,7 +2,6 @@
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-
 //on load get restaurants
   $.ajax ({
     method: "GET",
