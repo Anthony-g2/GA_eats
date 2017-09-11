@@ -8,14 +8,6 @@ $(document).ready(function() {
     success: loadRestaurants
   })
 
-  function initMap() {
-    var ga = {lat: 37.791, lng: -122.401};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 16,
-      center: ga
-    });
-  }
-
   //Functionality of the domain
 
   $('.create').on('submit', function(e) {
@@ -52,14 +44,33 @@ $(document).ready(function() {
   });
 
 
+
+function loadRestaurants(restaurant) {
+  restaurant.forEach(function(restaurant){
+    renderRestaurant(restaurant);
+  });
+};
+
+});
+var map;
+function initMap() {
+  //console.log("map initted")
+  var ga = {lat: 37.791, lng: -122.401};
+   map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 16,
+    center: {lat: 37.791, lng: -122.401}
+  });
+}
 function renderRestaurant(restaurant) {
 
   console.log("Rendering Restaurants", restaurant);
-  var restLocation = {lat: restaurant.latitude, lng: restaurant.longitude};
   var marker = new google.maps.Marker({
-      position: restLocation,
-      map: initMap,
-    });
+    position: {
+      lat:  restaurant.latitude,
+      lng: restaurant.longitude,
+    },
+    map: map
+  });
 
 
   var restaurantHtml = (`<div class="jumbotron resShow restaurant" data-restaurant-id=${ restaurant._id}>
@@ -111,13 +122,6 @@ function renderRestaurant(restaurant) {
   $('#results').append(restaurantHtml).fadeIn(600);
 };
 
-function loadRestaurants(restaurant) {
-  restaurant.forEach(function(restaurant){
-    renderRestaurant(restaurant);
-  });
-};
-
-});
 // tips
 // return `<div id="tips">
 //   <h4>Tips</h4>

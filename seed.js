@@ -5,6 +5,8 @@ var restaurantList = [];
 restaurantList.push({
   name: "Curry Up Now",
   address: "255 Bush St San Francisco, CA 94104",
+  latitude: 37.7912,
+  longitude: -122.401,
   typeOfFood: "Indian",
   price:"$",
   parking: "No",
@@ -28,6 +30,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Sushirrito",
   address: "226 Kearny St San Francisco, CA 94108",
+  latitude: 37.7902361,
+  longitude: -122.4037893,
   typeOfFood: "Japanese",
   price: "$$",
   parking: "No",
@@ -51,6 +55,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Taqueria Estrella",
   address: "380 Bush St Ste 5 International Food Ct San Francisco, CA 94104",
+  latitude: 37.790931,
+  longitude: -122.403904,
   typeOfFood: "Mexican",
   price:"$",
   parking: "No",
@@ -74,6 +80,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Lite Bite",
   address: "220 Bush St San Francisco, CA 94104",
+  latitude: 37.7914104,
+  longitude: -122.4012865,
   typeOfFood: "Healthy",
   price:"$",
   parking: "No",
@@ -97,6 +105,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Pagan Idol",
   address: "375 Bush St San Francisco, CA 94104",
+  latitude: 37.7907248,
+  longitude: -122.4035919,
   typeOfFood: "Tiki Bar",
   price:"$$",
   parking: "No",
@@ -119,6 +129,8 @@ restaurantList.push({
 restaurantList.push({
   name: "City Counter",
   address: "115 Sansome St San Francisco, CA 94104",
+  latitude: 37.7914251,
+  longitude: -122.4010378,
   typeOfFood: "Sandwiches",
   price:"$$",
   parking: "No",
@@ -141,6 +153,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Katsu House",
   address: "112 Waverly Pl San Francisco, CA 94104",
+  latitude: 37.794477,
+  longitude: -122.406743,
   typeOfFood: "Sushi Bars",
   price:"$$",
   parking: "Yes",
@@ -164,6 +178,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Bun Mee",
   address: "650 Market St San Francisco, CA 94104",
+  latitude: 37.788466,
+  longitude: -122.4027612,
   typeOfFood: "Vietnamese",
   price:"$",
   parking: "No",
@@ -187,6 +203,8 @@ restaurantList.push({
 restaurantList.push({
   name: "Thainery",
   address: "International Food Court 380 Bush St Ste 3 San Francisco, CA 94104",
+  latitude: 37.790926,
+  longitude: -122.403858,
   typeOfFood: "Thai",
   price:"$",
   parking: "No",
