@@ -2,13 +2,14 @@
 
 $(document).ready(function() {
   console.log('app.js loaded!');
+
+//on load get restaurants
   $.ajax ({
     method: "GET",
     url: "/api/restaurants",
     success: loadRestaurants
   })
-  //Functionality of the domain
-
+//create a new restuarnt
   $('.create').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
@@ -20,12 +21,14 @@ $(document).ready(function() {
       renderRestaurant(restaurant);
     });
     $('.creMod').fadeOut(500);
-    //loadRestaurants(restaurant);
   });
+
+  //close button closes create form
   $('#closeCreateForm').on('click', function(e) {
     $('.creMod').fadeOut(500);
   });
 
+  // delete a resturant from the list
   $('#results').on('click', '.resButt1', function(e) {
     var id = $(this).closest('.restaurant').data('restaurant-id');
     console.log('id', id);
@@ -34,7 +37,6 @@ $(document).ready(function() {
     $.ajax({
       url: '/api/restaurants/' + id,
       method: 'DELETE',
-      //the commented out part of line below is how tunely does this but I can get it to work.
       success: function(result){
         $('[data-restaurant-id=' + restaurantId +']')
       },
@@ -45,7 +47,7 @@ $(document).ready(function() {
     $('.creMod').fadeIn(500);
   });
 });
-
+// formating for a restaurant on the page
 function renderRestaurant(restaurant) {
 
   console.log("Rendering Restaurants", restaurant);
@@ -101,7 +103,7 @@ function renderRestaurant(restaurant) {
 };
 
 
-
+//load restaurant when page is loaded
 function loadRestaurants(restaurant) {
   restaurant.forEach(function(restaurant){
     renderRestaurant(restaurant);
@@ -110,8 +112,7 @@ function loadRestaurants(restaurant) {
 
 
 
-
-// tips
+// tips feature still being built
 // return `<div id="tips">
 //   <h4>Tips</h4>
 //   <p>"${restaurant.tips[x].text}"</p>
