@@ -2,7 +2,7 @@ function index(req, res){
   res.json({
     name: "GA Eats SF",
     description: "Not Yelp",
-    authors: "Jonathan M., Jimmy C., Anthony G.",
+    authors: "Jonathan M., Jimmy C. & Anthony G.",
   });
 }
 
