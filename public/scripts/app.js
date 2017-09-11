@@ -24,7 +24,7 @@ $(document).ready(function() {
   });
   $('.create').on('close', function(e) {
     $('.topBar').remove();
-  });
+  }
 
   $('#results').on('click', '.resButt1', function(e) {
     var id = $(this).closest('.restaurant').data('restaurant-id');
