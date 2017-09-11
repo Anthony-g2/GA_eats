@@ -22,6 +22,9 @@ $(document).ready(function() {
     $('.creMod').fadeOut(500);
     loadRestaurants(restaurant);
   });
+  $('.create').on('close', function(e) {
+    $('.topBar').remove();
+  });
 
   $('#results').on('click', '.resButt1', function(e) {
     var id = $(this).closest('.restaurant').data('restaurant-id');
@@ -41,8 +44,8 @@ $(document).ready(function() {
   $('.optButt').on('click', function(){
     $('.creMod').fadeIn(500);
   });
-
 });
+
 function renderRestaurant(restaurant) {
 
   console.log("Rendering Restaurants", restaurant);
@@ -97,11 +100,15 @@ function renderRestaurant(restaurant) {
   $('#results').append(restaurantHtml).fadeIn(600);
 };
 
+
+
 function loadRestaurants(restaurant) {
   restaurant.forEach(function(restaurant){
     renderRestaurant(restaurant);
   });
 };
+
+
 
 
 // tips
