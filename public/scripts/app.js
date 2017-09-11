@@ -15,6 +15,7 @@ $(document).ready(function() {
     console.log('formData', formData);
     $.post('/api/restaurants',formData, function(restaurant) {
       console.log('restaurant after POST', restaurant);
+
       $('.create')[0].reset();
       renderRestaurant(restaurant);
     });
@@ -40,7 +41,6 @@ $(document).ready(function() {
   $('.optButt').on('click', function(){
     $('.creMod').fadeIn(500);
   });
-
 
 });
 function renderRestaurant(restaurant) {
@@ -102,6 +102,7 @@ function loadRestaurants(restaurant) {
     renderRestaurant(restaurant);
   });
 };
+
 
 // tips
 // return `<div id="tips">
