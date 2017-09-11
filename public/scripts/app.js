@@ -20,17 +20,12 @@ $(document).ready(function() {
       renderRestaurant(restaurant);
     });
     $('.creMod').fadeOut(500);
-    //loadRestaurants(restaurant);
+    loadRestaurants(restaurant);
   });
-<<<<<<< HEAD
   $('.create').on('close', function(e) {
+
     $('.topBar').remove();
   }
-=======
-  $('#closeCreateForm').on('click', function(e) {
-    $('.creMod').fadeOut(500);
-  });
->>>>>>> 7f222ac3a4e5efc4f5779270786fc7f266ce0555
 
   $('#results').on('click', '.resButt1', function(e) {
     var id = $(this).closest('.restaurant').data('restaurant-id');
