@@ -7,6 +7,20 @@ $(document).ready(function() {
     url: "/api/restaurants",
     success: loadRestaurants
   })
+
+  function initMap() {
+    var ga = {lat: 37.791, lng: -122.401};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 16,
+      center: ga
+    });
+  }
+  //   var marker = new google.maps.Marker({
+  //     position: ga,
+  //     map: map
+  //   });
+  // }
+
   //Functionality of the domain
 
   $('.create').on('submit', function(e) {
@@ -47,6 +61,7 @@ function renderRestaurant(restaurant) {
 
   console.log("Rendering Restaurants", restaurant);
 
+  // var marker = new google.maps.markers
 
   var restaurantHtml = (`<div class="jumbotron resShow restaurant" data-restaurant-id=${ restaurant._id}>
   <img class="imgRest" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F14%2Ff0f9c1fd-615f-42fe-aa62-3ded5a49d228.jpg" alt="restaurant">
