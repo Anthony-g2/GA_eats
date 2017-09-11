@@ -1,4 +1,4 @@
-# <img src="/images/logo.png" width="60"> PROJECT 1: GA EATS
+# <img src="http://guidedlaunch.com/blog/wp-content/uploads/2013/06/No-Yelp.gif" width="60"> PROJECT 1: GA EATS
 
 This is a application made to show all the local restaurants around General Assembly in San Francisco, CA.
 
