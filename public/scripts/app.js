@@ -1,7 +1,6 @@
 
 
 $(document).ready(function() {
-  console.log('app.js loaded!');
   $.ajax ({
     method: "GET",
     url: "/api/restaurants",
@@ -13,9 +12,7 @@ $(document).ready(function() {
   $('.create').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
-    console.log('formData', formData);
     $.post('/api/restaurants',formData, function(restaurant) {
-      console.log('restaurant after POST', restaurant);
 
       $('.create')[0].reset();
       renderRestaurant(restaurant);
@@ -29,13 +26,10 @@ $(document).ready(function() {
 
   $('#results').on('click', '.resButt1', function(e) {
     var id = $(this).closest('.restaurant').data('restaurant-id');
-    console.log('id', id);
-    console.log('someone wants to delete restaurant id= ', id );
     $(this).closest('.restaurant').fadeOut(500);
     $.ajax({
       url: '/api/restaurants/' + id,
       method: 'DELETE',
-      //the commented out part of line below is how tunely does this but I can get it to work.
       success: function(result){
         $('[data-restaurant-id=' + restaurantId +']')
       },
@@ -57,7 +51,6 @@ function loadRestaurants(restaurant) {
 });
 var map;
 function initMap() {
-  //console.log("map initted")
   var ga = {lat: 37.791, lng: -122.401};
    map = new google.maps.Map(document.getElementById('map'), {
     zoom: 16,
@@ -66,7 +59,7 @@ function initMap() {
 }
 function renderRestaurant(restaurant) {
 
-  console.log("Rendering Restaurants", restaurant);
+
   var marker = new google.maps.Marker({
     position: {
       lat:  restaurant.latitude,
@@ -125,7 +118,7 @@ function renderRestaurant(restaurant) {
   $('#results').append(restaurantHtml).fadeIn(600);
 };
 
-// tips
+// tips still being built
 // return `<div id="tips">
 //   <h4>Tips</h4>
 //   <p>"${restaurant.tips[x].text}"</p>

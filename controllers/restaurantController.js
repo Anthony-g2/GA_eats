@@ -9,22 +9,9 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 
-// map pin drops still being built
-// var long;
-//
-// geocoder.geocode('255 Bush St San Francisco, CA 94104', function(err, res) {
-//   console.log(res[0].longitude);
-//   console.log(res[0].latitude);
-//   long = res[0].longitude
-//   console.log("log equals:", long);
-// });
-// console.log("long is:", long)
-// GET /api/restaurants
-
 function index(req, res) {
   // send back all restaurants as JSON
   db.Restaurant.find({}, function(err, allRestaurants){
-    console.log(allRestaurants)
     res.json(allRestaurants);
   });
 }
@@ -48,7 +35,7 @@ function create(req, res) {
       parking: req.body.parking || "No",
       servesAlcohol: req.body.servesAlcohol || "No",
       lateNight: req.body.lateNight || "No",
-      tags: req.body.tags
+      tags: req.body.tags,
 
     }, function(err, createdRestaurant) {
       res.send(createdRestaurant);

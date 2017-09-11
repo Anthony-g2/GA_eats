@@ -225,17 +225,11 @@ restaurantList.push({
   ],
 });
 
-console.log("gonna remove")
-console.log(db.Restaurant)
 db.Restaurant.remove({}, function(err, restaurants){
-  console.log("removed")
   db.Restaurant.create(restaurantList, function(err, restaurants){
-    console.log("created")
     if (err) {
       return console.log('ERROR', err);
     };
-    console.log("all resturants:", restaurants);
-    console.log( "restaurants have been created.", restaurants.length);
     process.exit();
   });
 });

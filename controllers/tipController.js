@@ -4,8 +4,8 @@ var db = require('../models');
 function index(req, res){
   // send back all tips for a restaurant selected by id as JSON
   db.Restaurant.findById(req.params.restaurantId, function(err, foundRestaurant) {
-  res.json(foundRestaurant.tips);
-});
+    res.json(foundRestaurant.tips);
+  });
 }
 // POST '/api/restaurants/:restaurantId/tips'
 function create(req, res) {
