@@ -32,7 +32,7 @@ The main functionality of this application is to help users create a foodie data
 
 ## Heroku Link:
 
-(https://tranquil-woodland-73750.herokuapp.com/)
+https://tranquil-woodland-73750.herokuapp.com/
 
 
 DISCLAIMER:
