@@ -23,12 +23,13 @@
 .imgRest {
   width: 275px;
   height: 200px;
-  margin: -10px 2px -10px -30px;
+  margin: 15px;
+  margin-left: -10px;
   border-radius: 6px;
 }
 #Boolean-data p {
   font-size: 15px;
-  padding-left: 25px;
+  padding-left: 15px;
   font-weight: 500;
 }
 .resShow {
@@ -72,6 +73,7 @@ span{
 }
 .body{
   margin: 20px;
+  height: 600px;
 }
 .body h3{
   width: 150px;
@@ -122,14 +124,19 @@ form.create{
   width: 60px;
 }
 #tags{
-  height: auto;
-  width: auto;
+  background-color:rgb(245,245,255);
+  height: 124px;
+  width: 420px;
+  padding: 0;
+  border-radius: 6px;
+  border-left: 4.5px solid #eeeeee;
 }
 .inline-list{
   list-style: none;
 }
 #tags h4{
   height: 32px;
+  width: auto;
   text-align: justify;
   margin-bottom: 10px;
   text-decoration: underline;
@@ -143,6 +150,7 @@ form.create{
   text-decoration: underline;
   padding-top: 15px;
   padding-left: 25px;
+  width: auto;
 }
 span.col-sm-3{
   margin-top: 0;
@@ -155,8 +163,32 @@ span.col-sm-3{
 #String-Data ul{
   margin-bottom: 0;
 }
+#String-Data {
+  margin-bottom: 10px;
+}
 #Boolean-data {
-  border-right: 1px solid black;
+  border-right: 4.5px solid #eeeeee;
   height: auto;
-  width: auto;
+  width: 420px;
+  padding: 0;
+  border-radius: 6px;
+  background-color:rgb(245,245,255);
+}
+#results {
+  max-height: 800px;
+  overflow: scroll;
+  width: 1210px;
+}
+.hideMod{
+  display: none;
+}
+.holdThis{
+    width: 850px;
+    padding-left: 5px;
+    margin-left: 10px;
+    border-radius: 6px;
+    padding: 0;
+}
+#tags li{
+  margin-left: -10px;
 }
