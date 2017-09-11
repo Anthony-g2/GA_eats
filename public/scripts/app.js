@@ -20,10 +20,10 @@ $(document).ready(function() {
       renderRestaurant(restaurant);
     });
     $('.creMod').fadeOut(500);
-    loadRestaurants(restaurant);
+    //loadRestaurants(restaurant);
   });
-  $('.create').on('close', function(e) {
-    $('.topBar').remove();
+  $('#closeCreateForm').on('click', function(e) {
+    $('.creMod').fadeOut(500);
   });
 
   $('#results').on('click', '.resButt1', function(e) {
