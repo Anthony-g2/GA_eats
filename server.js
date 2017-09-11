@@ -5,7 +5,7 @@ var express = require('express');
 // generate a new express app and call it 'app'
 var app = express();
 var bodyParser = require('body-parser');
-// var NodeGeocoder = require('node-geocoder');
+
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
@@ -13,11 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var controllers = require('./controllers');
 
-// var options = {
-//   provider: 'google',
-//   apiKey: 'AIzaSyDVMk-QXI6cqgt6DLMG0NNW-1uF_X78sjY',
-// }
-// var geocoder = NodeGeocoder(options);
 
 /**********
  * ROUTES *
@@ -35,9 +30,9 @@ app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-/*
- * JSON API Endpoints
- */
+ /********************
+ * JSON API Endpoints*
+ ********************/
 app.get('/api', controllers.api.index);
 app.get('/about', controllers.about.index);
 
@@ -51,9 +46,6 @@ app.get('/api/restaurants/:restaurantId/tips', controllers.tip.index);
 app.post('/api/restaurants/:restaurantId/tips', controllers.tip.create);
 app.delete('/api/restaurants/:restaurantId/tips/:tipId', controllers.tip.destroy);
 
-// geocoder.geocode('255 Bush St San Francisco, CA 94104', function(err, res) {
-//   console.log(res);
-// });
 
 /**********
  * SERVER *
