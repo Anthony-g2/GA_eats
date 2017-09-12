@@ -13,7 +13,7 @@ var RestaurantSchema = new Schema({
   latitude: Number,
   longitude: Number,
   typeOfFood: String,
-  price:String,
+  price: String,
   parking: String,
   servesAlcohol: String,
   lateNight: String,
