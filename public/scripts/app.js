@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
   $.ajax ({
     method: "GET",
@@ -117,10 +115,3 @@ function renderRestaurant(restaurant) {
   </div>`)
   $('#results').append(restaurantHtml).fadeIn(600);
 };
-
-// tips still being built
-// return `<div id="tips">
-//   <h4>Tips</h4>
-//   <p>"${restaurant.tips[x].text}"</p>
-//   <p>${restaurant.tips[x].name}. ${restaurant.tips[x].date}</p>
-// </div>`;

@@ -5,5 +5,3 @@ mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/ga-eats", {use
 mongoose.Promise = global.Promise;  // use native Promise
 
 module.exports.Restaurant = require("./restaurant")
-
-module.exports.Tip = require("./tip")

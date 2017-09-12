@@ -22,12 +22,12 @@ function index(req, res) {
       {
         method: "POST",
         path: "/api/restaurants",
-        description: "add a restaurant to our database will not return a json object to screen",
+        description: "Add a restaurant to our database",
       },
       {
         method: "GET",
         path: "/api/restaurants/:restaurantId",
-        description: "find one restaurant by its id",
+        description: "Find one restaurant by id",
       },
       {
         method: "DELETE",
@@ -37,21 +37,21 @@ function index(req, res) {
       {
         method: "PUT",
         path: "/api/restaurants/:restaurantId",
-        description: "Update a restaurant in the data base with new data",
+        description: "Update a restaurant in the database with new data",
       },
       {
         method: "GET",
-        path: "/api/restaurants/:restaurantId/tip",
+        path: "/api/restaurants/:restaurantId/tips",
         description: "Get a list of all the tips for a specific restaurant",
       },
       {
         method: "POST",
-        path: "/api/restaurants/:restaurantId/tip",
-        description: "add a tip to a specific restaurant",
+        path: "/api/restaurants/:restaurantId/tips",
+        description: "Add a tip to a specific restaurant",
       },
       {
         method: "DELETE",
-        path: "/api/restaurants/:restaurantId/tip/:tipId",
+        path: "/api/restaurants/:restaurantId/tips/:tipId",
         description: "Delete a specific tip for a specific restaurant",
       },
     ]

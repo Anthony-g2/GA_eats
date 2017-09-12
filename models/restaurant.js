@@ -1,7 +1,11 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var Tip = require('./tip')
+var TipSchema = new Schema({
+  text: String,
+  name: String,
+  date: String,
+});
 
 var RestaurantSchema = new Schema({
   name: String,
@@ -9,12 +13,12 @@ var RestaurantSchema = new Schema({
   latitude: Number,
   longitude: Number,
   typeOfFood: String,
-  price:String,
+  price: String,
   parking: String,
   servesAlcohol: String,
   lateNight: String,
   tags: [String],
-  tips: [Tip.schema],
+  tips: [TipSchema],
 });
 
 var Restaurant = mongoose.model('Restaurant', RestaurantSchema);
