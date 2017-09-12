@@ -28,7 +28,7 @@ restaurantList.push({
 });
 
 restaurantList.push({
-  name: "Sushirrito",
+  name: "Sushirito",
   address: "226 Kearny St San Francisco, CA 94108",
   latitude: 37.7902361,
   longitude: -122.4037893,
@@ -218,7 +218,7 @@ restaurantList.push({
       date:"Apr. 3rd, 2017 ",
     },
     {
-      text:"There menu has lots of choices!",
+      text:"Their menu has lots of choices!",
       name:"Eric",
       date:"Dec. 9th 2016",
     },
