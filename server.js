@@ -33,6 +33,9 @@ app.get('/', function homepage (req, res) {
  /********************
  * JSON API Endpoints*
  ********************/
+
+// this seems a little like overkill; you don't need two different descriptive
+//   JSON endpoints.
 app.get('/api', controllers.api.index);
 app.get('/about', controllers.about.index);
 
