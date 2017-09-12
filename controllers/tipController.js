@@ -10,16 +10,10 @@ function index(req, res){
 // POST '/api/restaurants/:restaurantId/tips'
 function create(req, res) {
   // create a tip based on request body and send it back as JSON
-  db.Restaurant.findById(req.params.tip_id, function(err, foundRestaurant) {
-
-    // dangerous – in a real app, we'd validate the incoming data
-    var newTip = new db.Tip(req.body);
-
-    foundRestaurant.songs.push(newTip);
+  db.Restaurant.findById(req.params.restaurantId, function(err, foundRestaurant) {
+    foundRestaurant.tips.push(req.body);
     foundRestaurant.save(function(err, savedRestaurant) {
-      // responding with song in JSON
-      // some APIs may respond with parent obj as well (e.g. foundRestaurant)
-      res.json(newTip);
+      res.json(req.body);
     });
   });
 }
